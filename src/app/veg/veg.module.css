@@ -1,0 +1,15 @@
+/* src/app/veg/veg.module.css */
+.wrapper {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  min-height: 60vh; text-align: center; padding: 3rem 1.25rem;
+}
+.emoji  { font-size: 5rem; margin-bottom: 1rem; }
+.title  { font-size: 2rem; font-weight: 800; color: var(--green-dark); margin-bottom: .75rem; }
+.sub    { color: var(--text-muted); line-height: 1.7; margin-bottom: 2rem; }
+.waBtn  {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: #25d366; color: white; padding: .75rem 1.75rem;
+  border-radius: var(--radius-sm); font-weight: 700; font-size: 1rem;
+  transition: opacity .2s;
+}
+.waBtn:hover { opacity: .9; }

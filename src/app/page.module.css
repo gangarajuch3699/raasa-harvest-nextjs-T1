@@ -1,0 +1,196 @@
+/* src/app/page.module.css */
+
+/* ── Hero ──────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60%, var(--green-light) 100%);
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  opacity: .18;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  color: var(--white);
+  max-width: 640px;
+}
+
+.heroTag {
+  display: inline-block;
+  background: rgba(255,255,255,.15);
+  backdrop-filter: blur(6px);
+  color: var(--cream);
+  padding: .35rem .9rem;
+  border-radius: 99px;
+  font-size: .85rem;
+  font-weight: 600;
+  letter-spacing: .5px;
+  margin-bottom: 1.25rem;
+}
+
+.heroTitle {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+.heroTitle span { color: var(--gold); }
+
+.heroSubtitle {
+  font-size: 1.15rem;
+  opacity: .9;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.heroCta { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+.heroBtnPrimary {
+  background: var(--gold);
+  color: var(--white);
+  padding: .8rem 2rem;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  transition: all .2s;
+}
+.heroBtnPrimary:hover { background: #b8860b; transform: translateY(-2px); }
+
+.heroBtnOutline {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid rgba(255,255,255,.6);
+  padding: .8rem 2rem;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-weight: 700;
+  transition: all .2s;
+}
+.heroBtnOutline:hover { background: rgba(255,255,255,.15); }
+
+/* ── Features Strip ────────────────────────── */
+.features {
+  background: var(--cream);
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  font-size: .95rem;
+}
+
+.featureIcon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.featureLabel { font-weight: 600; font-size: .9rem; }
+.featureSub   { font-size: .8rem; color: var(--text-muted); }
+
+/* ── Categories ────────────────────────────── */
+.categories { padding: 5rem 0; }
+
+.categoriesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.catCard {
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  height: 280px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+.catImg {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .4s;
+}
+.catCard:hover .catImg { transform: scale(1.06); }
+
+.catOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.7) 0%, transparent 60%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  color: var(--white);
+}
+
+.catTitle { font-size: 1.4rem; font-weight: 800; }
+.catSub   { font-size: .9rem; opacity: .85; margin-bottom: .75rem; }
+
+.catLink {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  background: var(--gold);
+  color: var(--white);
+  padding: .4rem .9rem;
+  border-radius: var(--radius-sm);
+  font-size: .85rem;
+  font-weight: 700;
+  width: fit-content;
+  transition: background .2s;
+}
+.catLink:hover { background: #b8860b; }
+
+/* ── WhatsApp CTA ──────────────────────────── */
+.waCta {
+  background: linear-gradient(135deg, var(--green-dark), var(--green));
+  color: var(--white);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.waCtaTitle { font-size: 1.8rem; font-weight: 700; margin-bottom: .75rem; }
+.waCtaSub   { opacity: .85; margin-bottom: 1.5rem; }
+
+.waBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: #25d366;
+  color: var(--white);
+  padding: .85rem 2rem;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-weight: 700;
+  transition: opacity .2s;
+}
+.waBtn:hover { opacity: .9; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .featuresGrid { grid-template-columns: repeat(2, 1fr); }
+  .categoriesGrid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .featuresGrid { grid-template-columns: 1fr; }
+  .categoriesGrid { grid-template-columns: 1fr; }
+}

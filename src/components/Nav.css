@@ -1,0 +1,92 @@
+/* src/components/Nav.css */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 4px rgba(0,0,0,.06);
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.nav__logo {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--green-dark);
+  letter-spacing: -.5px;
+}
+.nav__logo span { color: var(--gold); }
+
+.nav__links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav__link {
+  font-size: .95rem;
+  font-weight: 500;
+  color: var(--text);
+  transition: color .2s;
+}
+.nav__link:hover,
+.nav__link--active { color: var(--green); }
+
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav__cart-btn {
+  position: relative;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: var(--text);
+  transition: color .2s;
+}
+.nav__cart-btn:hover { color: var(--green); }
+
+.nav__badge {
+  position: absolute;
+  top: -6px; right: -8px;
+  background: var(--green);
+  color: var(--white);
+  font-size: .65rem;
+  font-weight: 700;
+  border-radius: 99px;
+  padding: 1px 5px;
+  min-width: 18px;
+  text-align: center;
+}
+
+.nav__menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text);
+}
+
+@media (max-width: 768px) {
+  .nav__links { display: none; }
+  .nav__links--open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 64px; left: 0; right: 0;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 1.25rem;
+    gap: 1rem;
+  }
+  .nav__menu-btn { display: block; }
+}
